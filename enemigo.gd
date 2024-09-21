@@ -18,6 +18,7 @@ func _physics_process(delta):
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("laser") or area.is_in_group("nave"):
 		Global.score += 100
+		
 		$AnimationPlayer.play("Explotion")
 		$Area2D/CollisionShape2D.disabled
 		$Explosion.play()

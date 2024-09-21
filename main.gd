@@ -2,27 +2,23 @@ extends Node2D
 
 
 func _ready() -> void:
-	
 	get_tree().paused = false
 	$Pausa.visible = false
 	pass
-	
 
 func _process(delta: float) -> void:
 	
-	if Input.is_physical_key_pressed(KEY_ESCAPE):      
-		get_tree().paused = true
-		$Pausa.visible = true 
-		pass
-		
 	if Global.naveDestruida:             #Si la nave fue destruida, perdiste!
 		get_tree().paused = true
 		Global.rejugar = true
+		Global.score = 0
 		$Pausa.visible = true
 		$Pausa/ColorRect/VBoxContainer/Label.visible = true 
 		$Pausa/ColorRect/VBoxContainer/Jugar.visible = false
 		$Pausa/ColorRect/VBoxContainer/Rejugar.visible = true 
 	pass
+	
+
 
 
 func _on_pausa_jugar() -> void:

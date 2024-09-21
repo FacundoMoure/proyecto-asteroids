@@ -15,3 +15,8 @@ func _on_salir_pressed():
 func _on_rejugar_pressed():
 	emit_signal("rejugar")
 	pass 
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Pause"):
+		get_tree().paused = not get_tree().paused
+		visible = get_tree().paused

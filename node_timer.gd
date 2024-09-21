@@ -13,7 +13,7 @@ func time_left_to_live():
 	return [minute, second]
 
 func _process(delta: float) -> void:
-	label.text = "%02d:%02d" % time_left_to_live()
+	label.text = "Time: %02d:%02d" % time_left_to_live()
 	
 	
 func _on_timer_timeout() -> void:

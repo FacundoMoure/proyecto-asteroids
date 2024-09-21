@@ -1,5 +1,5 @@
 extends Label
 
 func _process(delta: float) -> void:
-	self.text = str(Global.score)
+	self.text = "Score: " + str(Global.score)
 	pass
