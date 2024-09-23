@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmjety3py1t37"]
+[gd_scene load_steps=5 format=3 uid="uid://cmjety3py1t37"]
 
 [ext_resource type="Script" path="res://Scenes/menu.gd" id="1_yeae3"]
 [ext_resource type="Texture2D" uid="uid://paiyq0uukx70" path="res://Assets/Img/Menu Asteroides 1.jpg" id="2_i2u1e"]
 [ext_resource type="AudioStream" uid="uid://c7uvnp2n2krm0" path="res://Assets/Audio/Menu Loop.ogg" id="3_dayyb"]
+[ext_resource type="FontFile" uid="uid://b5whvkatv7faj" path="res://AASIANNINJA.OTF" id="4_31fj5"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -36,10 +37,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -45.5
-offset_top = -33.5
-offset_right = 45.5
-offset_bottom = 33.5
+offset_left = -71.0
+offset_top = -5.0
+offset_right = 42.0
+offset_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
@@ -61,6 +62,34 @@ text = "Quit
 stream = ExtResource("3_dayyb")
 volume_db = 3.0
 autoplay = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -118.0
+offset_right = 105.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 0.372549)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 10
+theme_override_constants/shadow_offset_x = -3
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("4_31fj5")
+theme_override_font_sizes/font_size = 67
+text = "Space Dementia
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

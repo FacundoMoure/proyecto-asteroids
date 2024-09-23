@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://borg78fw15wgi"]
+[gd_scene load_steps=15 format=3 uid="uid://borg78fw15wgi"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_q42w3"]
 [ext_resource type="PackedScene" uid="uid://ijulcvbsdbgi" path="res://nave.tscn" id="2_7a5wv"]
@@ -53,14 +53,6 @@ tracks/0/keys = {
 _data = {
 "Move": SubResource("Animation_tro12"),
 "RESET": SubResource("Animation_ssl5n")
-}
-
-[sub_resource type="Animation" id="Animation_s8a3y"]
-length = 0.001
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qfvnu"]
-_data = {
-"RESET": SubResource("Animation_s8a3y")
 }
 
 [node name="Main" type="Node2D"]
@@ -132,13 +124,10 @@ script = ExtResource("8_ri2s4")
 z_index = 100
 
 [node name="Spawn_2" type="Marker2D" parent="."]
-position = Vector2(734, -47)
+position = Vector2(0, -50)
 script = ExtResource("9_rarub")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Spawn_2"]
-libraries = {
-"": SubResource("AnimationLibrary_qfvnu")
-}
 
 [connection signal="timeout" from="NodeTimer/Timer" to="NodeTimer" method="_on_timer_timeout"]
 [connection signal="jugar" from="Pausa" to="." method="_on_pausa_jugar"]

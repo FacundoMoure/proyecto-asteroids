@@ -4,6 +4,7 @@ extends Node2D
 func _ready() -> void:
 	get_tree().paused = false
 	$Pausa.visible = false
+	Global.score = 0
 	pass
 
 func _process(delta: float) -> void:
@@ -13,13 +14,12 @@ func _process(delta: float) -> void:
 		Global.rejugar = true
 		Global.score = 0
 		$Pausa.visible = true
+		$Pausa/ColorRect/GameOver.visible = true
 		$Pausa/ColorRect/VBoxContainer/Label.visible = true 
 		$Pausa/ColorRect/VBoxContainer/Jugar.visible = false
 		$Pausa/ColorRect/VBoxContainer/Rejugar.visible = true 
 	pass
 	
-
-
 
 func _on_pausa_jugar() -> void:
 	get_tree().paused = false
@@ -28,6 +28,7 @@ func _on_pausa_jugar() -> void:
 
 func _on_pausa_rejugar() -> void:
 	get_tree().reload_current_scene()
+	Global.score = 0
 	Global.naveDestruida = false
 	#Global.rejugar = false   #Si dejo esta linea, va a volver a abrir el menu al comienzo.
 	pass 
