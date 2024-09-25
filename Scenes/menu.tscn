@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/menu.gd" id="1_yeae3"]
 [ext_resource type="Texture2D" uid="uid://paiyq0uukx70" path="res://Assets/Img/Menu Asteroides 1.jpg" id="2_i2u1e"]
 [ext_resource type="AudioStream" uid="uid://c7uvnp2n2krm0" path="res://Assets/Audio/Menu Loop.ogg" id="3_dayyb"]
-[ext_resource type="FontFile" uid="uid://b5whvkatv7faj" path="res://AASIANNINJA.OTF" id="4_31fj5"]
+[ext_resource type="FontFile" uid="uid://bg4imoj6kkfu6" path="res://Nasa.ttf" id="4_h7jgw"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -50,11 +50,15 @@ layout_mode = 2
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_h7jgw")
+theme_override_font_sizes/font_size = 28
 text = "Play
 "
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_h7jgw")
+theme_override_font_sizes/font_size = 28
 text = "Quit
 "
 
@@ -63,17 +67,17 @@ stream = ExtResource("3_dayyb")
 volume_db = 3.0
 autoplay = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Titulo" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -105.0
-offset_top = -118.0
-offset_right = 105.0
-offset_bottom = -47.0
+offset_left = -315.0
+offset_top = -121.0
+offset_right = 316.0
+offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 0.372549)
@@ -84,8 +88,8 @@ theme_override_constants/shadow_offset_x = -3
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 4
 theme_override_constants/shadow_outline_size = 3
-theme_override_fonts/font = ExtResource("4_31fj5")
-theme_override_font_sizes/font_size = 67
+theme_override_fonts/font = ExtResource("4_h7jgw")
+theme_override_font_sizes/font_size = 90
 text = "Space Dementia
 "
 horizontal_alignment = 1

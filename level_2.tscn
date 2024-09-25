@@ -1,18 +1,19 @@
-[gd_scene load_steps=14 format=3 uid="uid://borg78fw15wgi"]
+[gd_scene load_steps=17 format=3 uid="uid://buc4x7vmyiet2"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_q42w3"]
-[ext_resource type="PackedScene" uid="uid://ijulcvbsdbgi" path="res://nave.tscn" id="2_7a5wv"]
-[ext_resource type="PackedScene" uid="uid://b8os2ktw84au" path="res://fondo.tscn" id="2_78ims"]
-[ext_resource type="AudioStream" uid="uid://b3dmhokenuk4" path="res://Assets/Gameplay Loop.ogg" id="3_al6qi"]
-[ext_resource type="Script" path="res://spawn_1.gd" id="4_1lqow"]
-[ext_resource type="Script" path="res://node_timer.gd" id="6_ja3t8"]
-[ext_resource type="PackedScene" uid="uid://cx2s2wdi80ifk" path="res://Scenes/pausa.tscn" id="7_ai5my"]
-[ext_resource type="Script" path="res://score.gd" id="8_ri2s4"]
+[ext_resource type="PackedScene" uid="uid://ijulcvbsdbgi" path="res://nave.tscn" id="1_8mqjq"]
+[ext_resource type="Script" path="res://level_2.gd" id="1_c006p"]
+[ext_resource type="PackedScene" uid="uid://c6g8a68uak1t7" path="res://fondolevel2.tscn" id="2_2mrco"]
+[ext_resource type="Script" path="res://spawn_1level2.gd" id="3_ukvv0"]
+[ext_resource type="Script" path="res://spawn_2.gd" id="4_3h0u6"]
+[ext_resource type="AudioStream" uid="uid://b85h0hwr5kw2c" path="res://Assets/Audio/Gameplay Loop Level 2.ogg" id="5_4nco2"]
+[ext_resource type="Script" path="res://node_timer2.gd" id="7_3nd14"]
+[ext_resource type="Script" path="res://score.gd" id="7_hhcd1"]
+[ext_resource type="PackedScene" uid="uid://cx2s2wdi80ifk" path="res://Scenes/pausa.tscn" id="8_tj6hk"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_8nas1"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ugv55"]
 a = Vector2(1, 648)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_g4yly"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_c2jgr"]
 a = Vector2(1151, 10)
 b = Vector2(1151, 651)
 
@@ -54,33 +55,33 @@ _data = {
 "RESET": SubResource("Animation_ssl5n")
 }
 
-[node name="Main" type="Node2D"]
-script = ExtResource("1_q42w3")
+[sub_resource type="Animation" id="Animation_s8a3y"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qfvnu"]
+_data = {
+"RESET": SubResource("Animation_s8a3y")
+}
+
+[node name="Level2" type="Node2D"]
+script = ExtResource("1_c006p")
 
 [node name="Pared 1" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pared 1"]
-shape = SubResource("SegmentShape2D_8nas1")
+shape = SubResource("SegmentShape2D_ugv55")
 
 [node name="Pared 2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pared 2"]
-shape = SubResource("SegmentShape2D_g4yly")
+shape = SubResource("SegmentShape2D_c2jgr")
 
-[node name="Nave" parent="." instance=ExtResource("2_7a5wv")]
-position = Vector2(576, 574)
-
-[node name="Fondo" parent="." instance=ExtResource("2_78ims")]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_al6qi")
-volume_db = 6.0
-autoplay = true
-parameters/looping = true
+[node name="Nave" parent="." instance=ExtResource("1_8mqjq")]
+position = Vector2(581, 575)
 
 [node name="Spawn_1" type="Marker2D" parent="."]
 position = Vector2(0, -32)
-script = ExtResource("4_1lqow")
+script = ExtResource("3_ukvv0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Spawn_1"]
 libraries = {
@@ -88,8 +89,23 @@ libraries = {
 }
 autoplay = "Move"
 
+[node name="Spawn_2" type="Marker2D" parent="."]
+position = Vector2(734, -47)
+script = ExtResource("4_3h0u6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Spawn_2"]
+libraries = {
+"": SubResource("AnimationLibrary_qfvnu")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_4nco2")
+volume_db = 6.0
+autoplay = true
+parameters/looping = true
+
 [node name="NodeTimer" type="Node" parent="."]
-script = ExtResource("6_ja3t8")
+script = ExtResource("7_3nd14")
 
 [node name="Label" type="Label" parent="NodeTimer"]
 anchors_preset = 1
@@ -117,10 +133,12 @@ offset_right = 146.0
 offset_bottom = 70.0
 theme_override_font_sizes/font_size = 30
 text = "Score: "
-script = ExtResource("8_ri2s4")
+script = ExtResource("7_hhcd1")
 
-[node name="Pausa" parent="." instance=ExtResource("7_ai5my")]
-z_index = 100
+[node name="Pausa" parent="." instance=ExtResource("8_tj6hk")]
+z_index = 1
+
+[node name="Fondo2" parent="." instance=ExtResource("2_2mrco")]
 
 [connection signal="timeout" from="NodeTimer/Timer" to="NodeTimer" method="_on_timer_timeout"]
 [connection signal="jugar" from="Pausa" to="." method="_on_pausa_jugar"]

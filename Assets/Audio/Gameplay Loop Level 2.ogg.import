@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b85h0hwr5kw2c"
+path="res://.godot/imported/Gameplay Loop Level 2.ogg-cd2b3bc1af187d3734da255096cc5d55.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Gameplay Loop Level 2.ogg"
+dest_files=["res://.godot/imported/Gameplay Loop Level 2.ogg-cd2b3bc1af187d3734da255096cc5d55.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -37,7 +37,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemigo") or area.is_in_group("ufo"):
 		$AnimationPlayer.play("Explotion")
 		$Area2D/CollisionPolygon2D.disabled
-		var timer2 = get_tree().create_timer(1.9)
+		var timer2 = get_tree().create_timer(1.5)
 		await timer2.timeout
 		Global.naveDestruida = true  #Permite saber cuando se pierde, importante!
 

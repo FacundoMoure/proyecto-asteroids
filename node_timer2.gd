@@ -22,5 +22,5 @@ func _on_timer_timeout() -> void:
 	get_tree().paused = true
 	var timer2 = get_tree().create_timer(2)
 	await timer2.timeout
-	get_tree().change_scene_to_file("res://level_2.tscn")
+	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 	pass # Replace with function body.

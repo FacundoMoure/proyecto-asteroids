@@ -8,7 +8,7 @@ func _physics_process(delta):
 		1: gravity_scale = 1
 		2: gravity_scale = 5
 		3: 
-			gravity_scale = 0.4 
+			gravity_scale = 0.2 
 			rotation_degrees -= 1
 		4: visible = false
 	pass

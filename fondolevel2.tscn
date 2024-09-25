@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://c6g8a68uak1t7"]
+
+[ext_resource type="Script" path="res://parallax_layerlevel2.gd" id="1_nhxia"]
+[ext_resource type="Shader" path="res://fondo.gdshader" id="2_pud1s"]
+[ext_resource type="Texture2D" uid="uid://bny0qatqco2wf" path="res://Assets/Nebula Blue.png" id="3_84tk1"]
+[ext_resource type="Script" path="res://parallax_layer_2level2.gd" id="4_tbcwf"]
+[ext_resource type="Texture2D" uid="uid://bajusmnochxsn" path="res://Assets/Stars Small_1.png" id="5_p8qe1"]
+[ext_resource type="Script" path="res://parallax_layer_3level2.gd" id="6_o686d"]
+[ext_resource type="Texture2D" uid="uid://dag0sbv250h5k" path="res://Assets/Stars-Big_1.png" id="7_d7h0x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yvnm5"]
+render_priority = 0
+shader = ExtResource("2_pud1s")
+
+[node name="Fondo2" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(1, 0)
+motion_mirroring = Vector2(0, 4100)
+script = ExtResource("1_nhxia")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_yvnm5")
+scale = Vector2(1, 1.003)
+texture = ExtResource("3_84tk1")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(0, 800)
+script = ExtResource("4_tbcwf")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxLayer2"]
+use_parent_material = true
+position = Vector2(590.5, 321)
+scale = Vector2(0.313232, 0.180176)
+texture = ExtResource("5_p8qe1")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(0, 700)
+script = ExtResource("6_o686d")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxLayer3"]
+use_parent_material = true
+position = Vector2(564.5, 326)
+scale = Vector2(0.586426, 0.339844)
+texture = ExtResource("7_d7h0x")
