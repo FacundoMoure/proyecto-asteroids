@@ -6,6 +6,7 @@ func _ready() -> void:
 	$Pausa.visible = false
 	Global.score = 0
 	pass
+	
 
 func _process(delta: float) -> void:
 	
@@ -14,7 +15,7 @@ func _process(delta: float) -> void:
 		Global.rejugar = true
 		Global.score = 0
 		$Pausa.visible = true
-		$Pausa/ColorRect/GameOver.visible = true
+		$Pausa/ColorRect/GameOver.text = "Game Over"
 		$Pausa/ColorRect/VBoxContainer/Label.visible = true 
 		$Pausa/ColorRect/VBoxContainer/Jugar.visible = false
 		$Pausa/ColorRect/VBoxContainer/Rejugar.visible = true 

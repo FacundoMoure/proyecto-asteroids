@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://borg78fw15wgi"]
+[gd_scene load_steps=16 format=3 uid="uid://borg78fw15wgi"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_q42w3"]
 [ext_resource type="PackedScene" uid="uid://ijulcvbsdbgi" path="res://nave.tscn" id="2_7a5wv"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://spawn_1.gd" id="4_1lqow"]
 [ext_resource type="Script" path="res://node_timer.gd" id="6_ja3t8"]
 [ext_resource type="PackedScene" uid="uid://cx2s2wdi80ifk" path="res://Scenes/pausa.tscn" id="7_ai5my"]
+[ext_resource type="FontFile" uid="uid://bg4imoj6kkfu6" path="res://Nasa.ttf" id="7_unsbj"]
+[ext_resource type="PackedScene" uid="uid://by4j0odcejtkf" path="res://Scenes/lives.tscn" id="8_mj3rr"]
 [ext_resource type="Script" path="res://score.gd" id="8_ri2s4"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_8nas1"]
@@ -100,6 +102,7 @@ offset_top = 30.0
 offset_right = -57.0
 offset_bottom = 72.0
 grow_horizontal = 0
+theme_override_fonts/font = ExtResource("7_unsbj")
 theme_override_font_sizes/font_size = 30
 text = "Time: 00:00"
 horizontal_alignment = 1
@@ -115,12 +118,17 @@ offset_left = 50.0
 offset_top = 28.0
 offset_right = 146.0
 offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("7_unsbj")
 theme_override_font_sizes/font_size = 30
 text = "Score: "
 script = ExtResource("8_ri2s4")
 
 [node name="Pausa" parent="." instance=ExtResource("7_ai5my")]
 z_index = 100
+
+[node name="Lives" parent="." instance=ExtResource("8_mj3rr")]
+z_index = 1
+position = Vector2(-12, -50)
 
 [connection signal="timeout" from="NodeTimer/Timer" to="NodeTimer" method="_on_timer_timeout"]
 [connection signal="jugar" from="Pausa" to="." method="_on_pausa_jugar"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://buc4x7vmyiet2"]
+[gd_scene load_steps=19 format=3 uid="uid://buc4x7vmyiet2"]
 
 [ext_resource type="PackedScene" uid="uid://ijulcvbsdbgi" path="res://nave.tscn" id="1_8mqjq"]
 [ext_resource type="Script" path="res://level_2.gd" id="1_c006p"]
@@ -8,7 +8,9 @@
 [ext_resource type="AudioStream" uid="uid://b85h0hwr5kw2c" path="res://Assets/Audio/Gameplay Loop Level 2.ogg" id="5_4nco2"]
 [ext_resource type="Script" path="res://node_timer2.gd" id="7_3nd14"]
 [ext_resource type="Script" path="res://score.gd" id="7_hhcd1"]
+[ext_resource type="FontFile" uid="uid://bg4imoj6kkfu6" path="res://Nasa.ttf" id="7_prgi2"]
 [ext_resource type="PackedScene" uid="uid://cx2s2wdi80ifk" path="res://Scenes/pausa.tscn" id="8_tj6hk"]
+[ext_resource type="PackedScene" uid="uid://by4j0odcejtkf" path="res://Scenes/lives.tscn" id="11_xpp0f"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ugv55"]
 a = Vector2(1, 648)
@@ -116,6 +118,7 @@ offset_top = 30.0
 offset_right = -57.0
 offset_bottom = 72.0
 grow_horizontal = 0
+theme_override_fonts/font = ExtResource("7_prgi2")
 theme_override_font_sizes/font_size = 30
 text = "Time: 00:00"
 horizontal_alignment = 1
@@ -131,6 +134,7 @@ offset_left = 50.0
 offset_top = 28.0
 offset_right = 146.0
 offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("7_prgi2")
 theme_override_font_sizes/font_size = 30
 text = "Score: "
 script = ExtResource("7_hhcd1")
@@ -139,6 +143,10 @@ script = ExtResource("7_hhcd1")
 z_index = 1
 
 [node name="Fondo2" parent="." instance=ExtResource("2_2mrco")]
+
+[node name="Lives" parent="." instance=ExtResource("11_xpp0f")]
+z_index = 1
+position = Vector2(-12, -56)
 
 [connection signal="timeout" from="NodeTimer/Timer" to="NodeTimer" method="_on_timer_timeout"]
 [connection signal="jugar" from="Pausa" to="." method="_on_pausa_jugar"]

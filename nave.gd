@@ -3,6 +3,7 @@ extends CharacterBody2D
 var pre_laser = preload("res://laser.tscn")
 const SPEED = 500.0
 
+
 @warning_ignore("unused_parameter")
 func _physics_process(delta: float) -> void:
 	Move()
@@ -35,6 +36,10 @@ func Shot():
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemigo") or area.is_in_group("ufo"):
+		Global.lives -= 1
+		$AnimationPlayer.play("lives")
+		
+	if Global.lives == 0:
 		$AnimationPlayer.play("Explotion")
 		$Area2D/CollisionPolygon2D.disabled
 		var timer2 = get_tree().create_timer(1.5)

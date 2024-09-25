@@ -21,7 +21,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		$AnimationPlayer.play("Explotion")
 		$Area2D/CollisionShape2D.disabled
 		$Explosion.play()
-		
+
 		var timer2 = get_tree().create_timer(1)
 		await timer2.timeout
 		queue_free()
