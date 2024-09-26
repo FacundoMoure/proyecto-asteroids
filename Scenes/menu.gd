@@ -4,7 +4,11 @@ func _ready() -> void:
 	get_tree().paused = false
 
 func _on_play_pressed() -> void:
+	$TransitionControl.visible = true
+	$TransitionControl/AnimationPlayer.play_backwards("screen_transition")
+	await $TransitionControl/AnimationPlayer.animation_finished
 	get_tree().change_scene_to_file("res://main.tscn")
+	$TransitionControl.visible = false
 	pass 
 	
 func _on_quit_pressed() -> void:

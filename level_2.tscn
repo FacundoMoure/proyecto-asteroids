@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://buc4x7vmyiet2"]
+[gd_scene load_steps=20 format=3 uid="uid://buc4x7vmyiet2"]
 
 [ext_resource type="PackedScene" uid="uid://ijulcvbsdbgi" path="res://nave.tscn" id="1_8mqjq"]
 [ext_resource type="Script" path="res://level_2.gd" id="1_c006p"]
@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://bg4imoj6kkfu6" path="res://Nasa.ttf" id="7_prgi2"]
 [ext_resource type="PackedScene" uid="uid://cx2s2wdi80ifk" path="res://Scenes/pausa.tscn" id="8_tj6hk"]
 [ext_resource type="PackedScene" uid="uid://by4j0odcejtkf" path="res://Scenes/lives.tscn" id="11_xpp0f"]
+[ext_resource type="PackedScene" uid="uid://c3xmqkb761n43" path="res://transition.tscn" id="12_mu5ys"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ugv55"]
 a = Vector2(1, 648)
@@ -147,6 +148,17 @@ z_index = 1
 [node name="Lives" parent="." instance=ExtResource("11_xpp0f")]
 z_index = 1
 position = Vector2(-12, -56)
+
+[node name="Transi" type="Control" parent="."]
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="TransitionControl" parent="Transi" instance=ExtResource("12_mu5ys")]
+visible = false
+layout_mode = 1
 
 [connection signal="timeout" from="NodeTimer/Timer" to="NodeTimer" method="_on_timer_timeout"]
 [connection signal="jugar" from="Pausa" to="." method="_on_pausa_jugar"]

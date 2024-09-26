@@ -1,31 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmjety3py1t37"]
+[gd_scene load_steps=6 format=3 uid="uid://cmjety3py1t37"]
 
 [ext_resource type="Script" path="res://Scenes/menu.gd" id="1_yeae3"]
 [ext_resource type="Texture2D" uid="uid://paiyq0uukx70" path="res://Assets/Img/Menu Asteroides 1.jpg" id="2_i2u1e"]
 [ext_resource type="AudioStream" uid="uid://c7uvnp2n2krm0" path="res://Assets/Audio/Menu Loop.ogg" id="3_dayyb"]
 [ext_resource type="FontFile" uid="uid://bg4imoj6kkfu6" path="res://Nasa.ttf" id="4_h7jgw"]
+[ext_resource type="PackedScene" uid="uid://c3xmqkb761n43" path="res://transition.tscn" id="5_n0fx1"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yeae3")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -858.0
-offset_top = -324.0
-offset_right = 2272.0
-offset_bottom = 1438.0
+offset_left = -320.0
+offset_top = -8.0
+offset_right = 2810.0
+offset_bottom = 1754.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_i2u1e")
 
@@ -94,6 +89,10 @@ text = "Space Dementia
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TransitionControl" parent="." instance=ExtResource("5_n0fx1")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

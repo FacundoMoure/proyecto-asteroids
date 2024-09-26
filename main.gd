@@ -4,6 +4,11 @@ extends Node2D
 func _ready() -> void:
 	get_tree().paused = false
 	$Pausa.visible = false
+	$Transi/TransitionControl.visible = true
+	$Transi/TransitionControl/AnimationPlayer.play("screen_transition")
+	await $Transi/TransitionControl/AnimationPlayer.animation_finished
+	$Transi/TransitionControl.visible = false
+
 	Global.score = 0
 	pass
 	
