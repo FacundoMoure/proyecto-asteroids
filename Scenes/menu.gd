@@ -2,6 +2,10 @@ extends Control
 
 func _ready() -> void:
 	get_tree().paused = false
+	$TransitionControl.visible = true
+	$TransitionControl/AnimationPlayer.play("screen_transition")
+	await $TransitionControl/AnimationPlayer.animation_finished
+	$TransitionControl.visible = false
 
 func _on_play_pressed() -> void:
 	$TransitionControl.visible = true

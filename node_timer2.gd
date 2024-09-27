@@ -17,10 +17,19 @@ func _process(delta: float) -> void:
 	
 	
 func _on_timer_timeout() -> void:
+
+	$Transi/TransitionControl.visible = true
+	$Transi/TransitionControl/AnimationPlayer.play_backwards("screen_transition")
+	await $Transi/TransitionControl/AnimationPlayer.animation_finished
+
+	get_tree().paused = true
 	var timer = get_tree().create_timer(1)
 	await timer.timeout
-	get_tree().paused = true
-	var timer2 = get_tree().create_timer(2)
-	await timer2.timeout
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+	$Transi/TransitionControl.visible = false
+	pass
+	#var timer2 = get_tree().create_timer(2)
+	#await timer2.timeout
+	
+
 	pass # Replace with function body.
