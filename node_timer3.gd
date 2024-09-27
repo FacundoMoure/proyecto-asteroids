@@ -25,7 +25,7 @@ func _on_timer_timeout() -> void:
 	get_tree().paused = true
 	var timer = get_tree().create_timer(1)
 	await timer.timeout
-	get_tree().change_scene_to_file("res://level_3.tscn")
+	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 	$Transi/TransitionControl.visible = false
 	pass
 	#var timer2 = get_tree().create_timer(2)
