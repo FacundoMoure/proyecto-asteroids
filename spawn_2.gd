@@ -14,7 +14,7 @@ func _physics_process(delta):
 		get_parent().add_child(ufo)
 		ufo.global_position = Vector2(get_random_x_position(), global_position.y)
 		cae = false
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(0.8).timeout
 		cae = true
 	pass
 pass

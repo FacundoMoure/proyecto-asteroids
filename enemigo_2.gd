@@ -2,7 +2,7 @@ extends RigidBody2D
 
 var cae = 3
 var movimiento = Vector2()
-var velocidad = 6
+var velocidad = 4
 
 func _physics_process(delta):
 	match cae:

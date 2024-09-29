@@ -26,3 +26,4 @@ func _input(event: InputEvent) -> void:
 		$ColorRect/VBoxContainer/Salir.visible = true
 		$ColorRect/VBoxContainer.visible = true
 		Global.juegoPausa = not Global.juegoPausa
+		pass

@@ -34,7 +34,7 @@ func Shot():
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("enemigo") or area.is_in_group("ufo"):
+	if area.is_in_group("enemigo") or area.is_in_group("ufo") or area.is_in_group("green_laser"):
 		Global.lives -= 1
 		$AnimationPlayer.play("lives")
 		
