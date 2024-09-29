@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://blle74teooffg"]
+
+[ext_resource type="FontFile" uid="uid://bg4imoj6kkfu6" path="res://Nasa.ttf" id="1_wjnt6"]
+[ext_resource type="Script" path="res://score.gd" id="2_6m2hp"]
+
+[node name="Score" type="Node"]
+
+[node name="Score" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 28.0
+offset_right = 146.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("1_wjnt6")
+theme_override_font_sizes/font_size = 30
+text = "Score: "
+script = ExtResource("2_6m2hp")

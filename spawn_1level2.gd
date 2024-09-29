@@ -8,8 +8,8 @@ var spawn_area_max_x = 1000
 
 @warning_ignore("unused_parameter")
 func _physics_process(delta):
-	
-	if cae:
+	await get_tree().create_timer(4).timeout
+	if cae and Global.juegoPausa:
 		var roca = pre_roca.instantiate()
 		get_parent().add_child(roca)
 		roca.global_position = Vector2(get_random_x_position(), global_position.y)

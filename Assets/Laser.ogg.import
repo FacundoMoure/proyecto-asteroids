@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Laser.ogg-7e04e5011258b905ce68fff77494e593.og
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

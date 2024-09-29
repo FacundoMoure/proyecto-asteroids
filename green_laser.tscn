@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlexbv03inlaw"]
+
+[ext_resource type="Texture2D" uid="uid://cmemayijcowx6" path="res://Assets/Img/Green-Laser.png" id="1_f6nnl"]
+[ext_resource type="Script" path="res://green_laser.gd" id="1_q5cb0"]
+[ext_resource type="AudioStream" uid="uid://bafpb0v5p8lu4" path="res://Assets/Laser.ogg" id="2_pdudl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wtyxh"]
+radius = 3.0
+height = 106.0
+
+[node name="Green_laser" type="CharacterBody2D" groups=["green_laser"]]
+script = ExtResource("1_q5cb0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 1.90735e-06)
+scale = Vector2(0.06225, 0.256)
+texture = ExtResource("1_f6nnl")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="." groups=["green_laser"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_wtyxh")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_pdudl")
+pitch_scale = 1.8
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

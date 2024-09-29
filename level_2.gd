@@ -2,11 +2,21 @@ extends Node2D
 
 func _ready() -> void:
 	get_tree().paused = false
-	$Pausa.visible = false
-	$Transi/TransitionControl.visible = true
-	$Transi/TransitionControl/AnimationPlayer.play("screen_transition")
-	await $Transi/TransitionControl/AnimationPlayer.animation_finished
-	$Transi/TransitionControl.visible = false
+	$Pausa.visible = true
+	$Pausa/ColorRect/GameOver.text = "Level 2"
+	$Pausa/ColorRect/VBoxContainer.visible = false 
+	$TransitionControl.visible = true
+	$TransitionControl/AnimationPlayer.play("screen_transition")
+	
+	# Temporizador para desaparecer el texto
+	var timer = get_tree().create_timer(4)
+	await timer.timeout
+	
+	# Cambiar el texto a vacío
+	$Pausa/ColorRect/GameOver.text = ""
+
+	await $TransitionControl/AnimationPlayer.animation_finished
+	$TransitionControl.visible = false
 
 func _process(delta: float) -> void:
 	

@@ -1,6 +1,6 @@
 extends ParallaxLayer
 
-var SPEED = 60
+var SPEED = 200
 
 
 func _process(delta: float) -> void:
