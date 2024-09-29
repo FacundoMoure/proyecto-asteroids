@@ -5,7 +5,7 @@ var timer = Timer.new()
 
 func _ready() -> void:
 	timer.timeout.connect(self._on_timer_timeout)
-	timer.wait_time = 6.0
+	timer.wait_time = 3.0
 	timer.autostart = true
 	add_child(timer)
 	pass

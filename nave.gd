@@ -4,7 +4,6 @@ var pre_laser = preload("res://laser.tscn")
 const SPEED = 500.0
 
 
-@warning_ignore("unused_parameter")
 func _physics_process(delta: float) -> void:
 	Move()
 	Shot()

@@ -15,7 +15,7 @@ func Shoot():
 	var laser = pre_laser_green.instantiate()
 	get_parent().add_child(laser)
 	laser.position.x = position.x 
-	laser.position.y = position.y + 50 
+	laser.position.y = position.y + 80 
 	pass
 	
 func _on_timer_timeout() -> void:
@@ -29,5 +29,14 @@ func _on_timer_timeout() -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("laser"):
+		Global.score += 400
+		
+		$AnimationPlayer.play("Explotion")
+		$Area2D/CollisionPolygon2D.disabled
+		$Explosion.play()
+		
+		var timer2 = get_tree().create_timer(0.7)
+		await timer2.timeout
+		queue_free()
 		queue_free()
 		pass # Replace with function body.
