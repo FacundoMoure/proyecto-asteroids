@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://borg78fw15wgi"]
+[gd_scene load_steps=17 format=3 uid="uid://borg78fw15wgi"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_q42w3"]
 [ext_resource type="PackedScene" uid="uid://ijulcvbsdbgi" path="res://nave.tscn" id="2_7a5wv"]
 [ext_resource type="PackedScene" uid="uid://b8os2ktw84au" path="res://fondo.tscn" id="2_78ims"]
 [ext_resource type="AudioStream" uid="uid://b3dmhokenuk4" path="res://Assets/Gameplay Loop.ogg" id="3_al6qi"]
 [ext_resource type="Script" path="res://spawn_1.gd" id="4_1lqow"]
+[ext_resource type="Script" path="res://spawn_pwr.gd" id="5_2mhue"]
 [ext_resource type="PackedScene" uid="uid://b28eeq07f1b74" path="res://node_timer.tscn" id="6_efyyj"]
 [ext_resource type="PackedScene" uid="uid://cx2s2wdi80ifk" path="res://Scenes/pausa.tscn" id="7_ai5my"]
 [ext_resource type="PackedScene" uid="uid://blle74teooffg" path="res://score.tscn" id="7_ro43b"]
@@ -77,7 +78,12 @@ shape = SubResource("SegmentShape2D_g4yly")
 stream = ExtResource("3_al6qi")
 volume_db = 6.0
 autoplay = true
+bus = &"Music"
 parameters/looping = true
+
+[node name="Spawn_Pwr" type="Marker2D" parent="."]
+position = Vector2(696, -80)
+script = ExtResource("5_2mhue")
 
 [node name="Spawn_1" type="Marker2D" parent="."]
 position = Vector2(0, -32)
@@ -101,6 +107,7 @@ z_index = 1
 position = Vector2(-12, -50)
 
 [node name="TransitionControl" parent="." instance=ExtResource("11_les6x")]
+visible = false
 z_index = 5
 anchors_preset = 0
 anchor_right = 0.0

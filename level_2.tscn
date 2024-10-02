@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://buc4x7vmyiet2"]
+[gd_scene load_steps=21 format=3 uid="uid://buc4x7vmyiet2"]
 
 [ext_resource type="PackedScene" uid="uid://ijulcvbsdbgi" path="res://nave.tscn" id="1_8mqjq"]
 [ext_resource type="Script" path="res://level_2.gd" id="1_c006p"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cx2s2wdi80ifk" path="res://Scenes/pausa.tscn" id="8_tj6hk"]
 [ext_resource type="PackedScene" uid="uid://by4j0odcejtkf" path="res://Scenes/lives.tscn" id="11_xpp0f"]
 [ext_resource type="PackedScene" uid="uid://c3xmqkb761n43" path="res://transition.tscn" id="12_mu5ys"]
+[ext_resource type="Script" path="res://spawn_pwr.gd" id="13_16wtl"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ugv55"]
 a = Vector2(1, 648)
@@ -150,6 +151,7 @@ z_index = 1
 position = Vector2(-12, -56)
 
 [node name="TransitionControl" parent="." instance=ExtResource("12_mu5ys")]
+visible = false
 z_index = 5
 anchors_preset = 0
 anchor_right = 0.0
@@ -160,6 +162,10 @@ offset_right = 1230.0
 offset_bottom = 700.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="Spawn_Pwr" type="Marker2D" parent="."]
+position = Vector2(696, -80)
+script = ExtResource("13_16wtl")
 
 [connection signal="timeout" from="NodeTimer/Timer" to="NodeTimer" method="_on_timer_timeout"]
 [connection signal="jugar" from="Pausa" to="." method="_on_pausa_jugar"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwntgee5gjd85"]
+
+[ext_resource type="Texture2D" uid="uid://dahmnfatgkg63" path="res://Assets/Img/lives.png" id="1_8ttdm"]
+[ext_resource type="Script" path="res://Scenes/lives.gd" id="1_kfmrm"]
+
+[node name="Lives" type="Node2D"]
+script = ExtResource("1_kfmrm")
+
+[node name="live1" type="Sprite2D" parent="."]
+position = Vector2(76, 135)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_8ttdm")
+
+[node name="live2" type="Sprite2D" parent="."]
+position = Vector2(112, 135)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_8ttdm")
+
+[node name="live3" type="Sprite2D" parent="."]
+position = Vector2(149, 135)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_8ttdm")

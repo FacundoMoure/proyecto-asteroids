@@ -26,6 +26,7 @@ texture = ExtResource("1_5auda")
 expand_mode = 1
 
 [node name="TransitionControl" parent="." instance=ExtResource("3_hdte4")]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.9

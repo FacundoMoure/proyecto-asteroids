@@ -3,8 +3,8 @@ extends Marker2D
 var pre_roca = preload("res://enemigo.tscn")
 var cae = true
 # Define los límites del área de spawn en el eje X
-var spawn_area_min_x = 100
-var spawn_area_max_x = 1200
+var spawn_area_min_x = 50
+var spawn_area_max_x = 1100
 
 func _physics_process(delta):
 	

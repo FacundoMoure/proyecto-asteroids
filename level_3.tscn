@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://o2d2ixngojpp"]
+[gd_scene load_steps=23 format=3 uid="uid://o2d2ixngojpp"]
 
 [ext_resource type="PackedScene" uid="uid://ijulcvbsdbgi" path="res://nave.tscn" id="1_nk5jx"]
 [ext_resource type="Script" path="res://level_3.gd" id="1_smudf"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cx2s2wdi80ifk" path="res://Scenes/pausa.tscn" id="9_npyvc"]
 [ext_resource type="PackedScene" uid="uid://by4j0odcejtkf" path="res://Scenes/lives.tscn" id="10_cwlm2"]
 [ext_resource type="PackedScene" uid="uid://c7qnm2hxcmp8s" path="res://fondolevel3.tscn" id="11_103sy"]
+[ext_resource type="Script" path="res://spawn_pwr.gd" id="15_8cd2y"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_cpgnd"]
 a = Vector2(1, 648)
@@ -102,6 +103,10 @@ script = ExtResource("3_nssyh")
 libraries = {
 "": SubResource("AnimationLibrary_qfvnu")
 }
+
+[node name="Spawn_Pwr" type="Marker2D" parent="."]
+position = Vector2(696, -80)
+script = ExtResource("15_8cd2y")
 
 [node name="Spawn_ufo_shoot_left" type="Marker2D" parent="."]
 position = Vector2(-128, 62)

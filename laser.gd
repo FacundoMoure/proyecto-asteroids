@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-@warning_ignore("unused_parameter")
 func _physics_process(delta: float) -> void:
 	position.y -= 10
 	pass

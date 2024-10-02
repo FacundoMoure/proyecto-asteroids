@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://ijulcvbsdbgi"]
+[gd_scene load_steps=11 format=3 uid="uid://ijulcvbsdbgi"]
 
 [ext_resource type="Script" path="res://nave.gd" id="1_ddo5x"]
 [ext_resource type="Texture2D" uid="uid://8hdpatijvuf2" path="res://Assets/Nave2-removebg-preview.png" id="2_d6msf"]
 [ext_resource type="Texture2D" uid="uid://eew07el6hgk5" path="res://Assets/Explosion.png" id="3_04s1b"]
+[ext_resource type="Texture2D" uid="uid://bllef3de6ofor" path="res://Assets/Img/NaveFinal.png" id="5_ylrsh"]
 
 [sub_resource type="Animation" id="Animation_aktkl"]
 resource_name = "Explotion"
@@ -93,7 +94,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_d6msf")]
+"values": [ExtResource("5_ylrsh")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -281,7 +282,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_d6msf")]
+"values": [ExtResource("5_ylrsh")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -346,6 +347,18 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_14i73"]
 resource_name = "start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_ylrsh")]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_32ekx"]
 _data = {
@@ -359,7 +372,6 @@ _data = {
 [node name="Nave" type="CharacterBody2D" groups=["nave"]]
 position = Vector2(608, 737)
 script = ExtResource("1_ddo5x")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -378,12 +390,13 @@ position = Vector2(-5.8042, -24.9333)
 scale = Vector2(1.82667, 5.85)
 polygon = PackedVector2Array(10.4545, -0.37037, 7.27273, 6.2963, 5.45455, 9.25926, -0.454546, 9.62963, -7.72727, 8.88889, -8.18182, 9.62963, -10.9091, 9.53674e-07, -7.72727, -3.7037, 1.51846, -3.7037, 7.27273, -3.7037)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_32ekx")
 }
 autoplay = "Idle"
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-23, 48, -15, 48, -8, 71, -32, 71)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

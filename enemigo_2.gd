@@ -22,9 +22,8 @@ func set_vector(vector):
 	movimiento = vector.normalized() * velocidad
 	
 	
-
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("laser") or area.is_in_group("nave"):
+	if area.is_in_group("laser") or area.is_in_group("nave") or area.is_in_group("laser_2"):
 		Global.score += 300
 		
 		$AnimationPlayer.play("Explotion")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://0sena11gnvh8"
+path="res://.godot/imported/Credits Loop.ogg-1f4fbdcf117a5496c810025e7ba37c78.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Credits Loop.ogg"
+dest_files=["res://.godot/imported/Credits Loop.ogg-1f4fbdcf117a5496c810025e7ba37c78.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

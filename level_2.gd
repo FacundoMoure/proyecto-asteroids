@@ -20,8 +20,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	
-	
-	if Global.naveDestruida:             #Si la nave fue destruida, perdiste!
+	if Global.naveDestruida:        
 		get_tree().paused = true
 		Global.rejugar = true
 		Global.score = 0
